@@ -12,7 +12,7 @@ const Index = () => {
   const { data: weapons, isLoading, error } = useQuery({
     queryKey: ['weapons', filters],
     queryFn: async () => {
-      const response = await axios.get('/api/weapons', { params: filters });
+      const response = await axios.get('http://localhost:3001/api/weapons', { params: filters });
       return response.data;
     },
   });
